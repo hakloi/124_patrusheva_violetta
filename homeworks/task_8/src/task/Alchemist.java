@@ -8,39 +8,39 @@ public class Alchemist extends BattleUnitBase{
     @Override
     public void specialAbility(BattleUnit[] ownTeam, BattleUnit[] enemyTeam) {
 
-        int minHealthAlly = Integer.MAX_VALUE; 
-        int minHealthAllyIndex = 0;
-        int maxHealthAlly = Integer.MIN_VALUE; 
-        int maxHealthAllyIndex = 0;
+        int minHealth = Integer.MAX_VALUE; 
+        int minHealthIndex = 0;
+        int maxHealth = Integer.MIN_VALUE; 
+        int maxHealthIndex = 0;
         for (int i = 0; i < ownTeam.length; i++) { 
             BattleUnit own = ownTeam[i];
-            int allyHealth = own.health();
-            if(allyHealth < minHealthAlly ){
-                minHealthAllyIndex = i; 
-                minHealthAlly = allyHealth;
+            int Health = own.health();
+            if(Health < minHealth ){
+                minHealthIndex = i; 
+                minHealth = Health;
             }
         }
         System.out.println("ownTeam[0].health: " + ownTeam[0].health());
         for (int j = 0; j < ownTeam.length; j++){
             BattleUnit own = ownTeam[j];
-            int allyHealth = own.health();
-            if (allyHealth > maxHealthAlly){
-                maxHealthAlly = allyHealth;
-                maxHealthAllyIndex = j;
+            int Health = own.health();
+            if (Health > maxHealth){
+                maxHealth = Health;
+                maxHealthIndex = j;
             }
             if(ownTeam[0].health() == 60){
                 ownTeam[0].heal(10);
             }
         }
-        System.out.println("name min: " + ownTeam[minHealthAllyIndex].name());
-        System.out.println("name max: " + ownTeam[maxHealthAllyIndex].name());
+        System.out.println("name min: " + ownTeam[minHealthIndex].name());
+        System.out.println("name max: " + ownTeam[maxHealthIndex].name());
         System.out.println("name ownTeam[0]: " + ownTeam[0].name());
         System.out.println("name ownTeam[1]: " + ownTeam[1].name());
         System.out.println("name ownTeam[2]: " + ownTeam[2].name());
         System.out.println("name ownTeam[3]: " + ownTeam[3].name());
 
-        ownTeam[minHealthAllyIndex].heal(10);
-        ownTeam[maxHealthAllyIndex].setStrength(ownTeam[maxHealthAllyIndex].strength()+1);
+        ownTeam[minHealthIndex].heal(10);
+        ownTeam[maxHealthIndex].setStrength(ownTeam[maxHealthIndex].strength()+1);
     }
 
     @Override
