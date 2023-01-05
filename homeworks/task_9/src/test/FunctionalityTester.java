@@ -26,11 +26,11 @@ public class FunctionalityTester {
         testNum = 1;
         allOk = true;
         return switch (className) {
-            //Раскомментируйте следующую строку, если сделали подзадачу 1
-            //case "task.DoubleLinkedListItem" -> testDoubleLinkedListItem();
 
-            //Раскомментируйте следующую строку, если сделали подзадачу 2
-            //case "task.DoubleLinkedList" -> testDoubleLinkedList();
+            case "task.DoubleLinkedListItem" -> testDoubleLinkedListItem();
+
+
+            case "task.DoubleLinkedList" -> testDoubleLinkedList();
 
             //Раскомментируйте следующую строку, если сделали подзадачу 3
             //case "task.DoubleLinkedListSorter" -> testDoubleLinkedListSorter();
@@ -47,8 +47,6 @@ public class FunctionalityTester {
     }
 
 
-    //Раскомментируйте следующий метод, если сделали подзадачу 1
-    /*
     private boolean testDoubleLinkedListItem() {
         DoubleLinkedListItem<Integer> item1 = new DoubleLinkedListItem<>(10);
         writeProto(item1.getPrev() == null);
@@ -64,10 +62,9 @@ public class FunctionalityTester {
         writeProto(item2.getData() == 20);
         return allOk;
     }
-     */
 
-    //Раскомментируйте следующий блок, если сделали подзадачу 2
-    /*
+
+
     private <T extends Comparable<T>> boolean listEquals(DoubleLinkedList<T> actual, Object[] expected) {
         if(actual.getSize() != expected.length)
             return false;
@@ -147,7 +144,7 @@ public class FunctionalityTester {
         }
         return allOk;
     }
-     */
+
 
     //Раскомментируйте следующий метод, если сделали подзадачу 3
     /*
